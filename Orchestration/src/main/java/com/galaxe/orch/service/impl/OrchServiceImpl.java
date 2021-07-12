@@ -24,7 +24,7 @@ public class OrchServiceImpl implements OrchService {
 	MembershipDAO membershipDAO;
 	
 	@Override
-	public Name getName(int id, Date dateOfBirth) {
+	public Name getName(Integer id, Date dateOfBirth) {
 		NameBO nameBo = nameDAO.findByIdAndDateOfBirth(id, dateOfBirth);
 		Name name = new Name();
 		name.setFirstName(nameBo.getFirstname());
@@ -34,16 +34,18 @@ public class OrchServiceImpl implements OrchService {
 	}
 
 	@Override
-	public Membership getMembership(int id, Date dateOfBirth) {
-		Membership mem = new Membership();
-		Group grp = new Group();
-		MembershipBO memBo = membershipDAO.findByIdAndDateOfBirth(id, dateOfBirth);
-		mem.setDateOfBirth(memBo.getDateOfBirth());
-		grp.setCarrierId(memBo.getCarrierId());
-		grp.setGroupId(memBo.getGroupId());
-		mem.setGroup(grp);
+	public Membership getMembership(Integer id, Date dateOfBirth) {
 		
-		return mem;
+		Membership memVo = new Membership();
+		Group grpVo = new Group();
+		
+		MembershipBO memBo = membershipDAO.findByIdAndDateOfBirth(id, dateOfBirth);
+		memVo.setDateOfBirth(memBo.getDateOfBirth());
+		grpVo.setCarrierId(memBo.getCarrierId());
+		grpVo.setGroupId(memBo.getGroupId());
+		memVo.setGroup(grpVo);
+		
+		return memVo;
 	}
 
 }

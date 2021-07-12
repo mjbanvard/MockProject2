@@ -28,7 +28,6 @@ import com.galaxe.orch.service.OrchService;
 public class OrchController {
 
 	@Autowired
-	static
 	OrchService orchServ;
 
 	@PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -39,18 +38,23 @@ public class OrchController {
 		recipient.setId(orchReq.getId());
 		recipient.setDateOfBirth(Date.valueOf(orchReq.getDateOfBirth()));
 		
-		recipient = buildRecipient(orchReq);
+		recipient = buildRecipient(recipient);
 		HttpStatus httpStatus = postToDispatch(recipient);
 		
 		return new ResponseEntity<Object>(recipient, httpStatus /*HttpStatus.OK*/);
 	}
 	
-	private Recipient buildRecipient(Recipient recipient) {
+	public Recipient buildRecipient(Recipient recipient) {
+		
+//		GetNameAndMembership getNameAndMembership = new GetNameAndMembership();
+//		getNameAndMembership.main(recipient);
 		
 		getNameAndMembership(recipient);
+		getContactInfo(recipient);
 		getChannelSelection(recipient);
 		getPrescriptionService(recipient);
 		getElegibilityService(recipient);
+		postToDispatch(recipient);
 		
 		return recipient;
 	}

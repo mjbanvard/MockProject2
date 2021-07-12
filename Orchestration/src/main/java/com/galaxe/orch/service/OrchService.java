@@ -7,8 +7,8 @@ import com.galaxe.orch.domain.Name;
 
 public interface OrchService {
 	
-	Name getName(int id, Date dateOfBirth);
+	Name getName(Integer id, Date dateOfBirth);
 	
-	Membership getMembership(int id, Date dateOfBirth);
+	Membership getMembership(Integer id, Date dateOfBirth);
 
 }
