@@ -27,25 +27,29 @@ public class ChanSelController {
 	@Autowired
 	ChanSelService csService;
 	
-	Logger logger = LoggerFactory.getLogger(ChanSelController.class);
+	Logger logger = LoggerFactory.getLogger( ChanSelController.class );
 	
-	@PostMapping(value="/",produces=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping( value="/", consumes=MediaType.APPLICATION_JSON_VALUE )
 	@ResponseBody
-//	public ResponseEntity<Object> getEmailAndPhone (@RequestBody CSRequest request) {
-	public ChanResponse getEmailAndPhone (@RequestBody CSRequest request) {
+//	public ResponseEntity<Object> getEmailAndPhone ( @RequestBody CSRequest request ) {
+	public ChanResponse getEmailAndPhone ( @RequestBody CSRequest request ) {
 				
-		List<Email> eList = new ArrayList<Email>();
-		List<Phone> pList = new ArrayList<Phone>();
-		logger.trace("LOG: Changing json value to String");
-		Date date = request.getDateOfBirth();
+		List< Email > eList = new ArrayList<>();
+		List< Phone > pList = new ArrayList<>();
 		
-		eList = csService.getEmail(request.getId(), date);
-		pList = csService.getPhone(request.getId(), date);
+		Integer id = request.getId();
 		
-		logger.trace("LOG: Building the response.");
+		logger.trace( "LOG: Changing json value to Date" );
+		String stringDate = request.getDateOfBirth().toString();
+		Date date = Date.valueOf( stringDate );
+		
+		eList = csService.getEmail( id, date );
+		pList = csService.getPhone( id, date );
+		
+		logger.trace( "LOG: Building the response." );
 		ChanResponse csResponse = new ChanResponse();
-		csResponse.setEmail(eList);
-		csResponse.setPhone(pList);
+		csResponse.setEmail( eList );
+		csResponse.setPhone( pList );
 		
 //		return new ResponseEntity<Object>(cResponse, HttpStatus.OK);
 		return csResponse;

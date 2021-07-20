@@ -1,17 +1,16 @@
 package com.galaxe.eligible.domain;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class StatusResponse {
+	
 	StatusVO statusResponse;
 	
-	public StatusVO getStatusResponse(){
-		return statusResponse;
-	}
-
-	public void setStatusResponse(StatusVO statusResponse) {
-		this.statusResponse = statusResponse;
-		
-	}
-
 }

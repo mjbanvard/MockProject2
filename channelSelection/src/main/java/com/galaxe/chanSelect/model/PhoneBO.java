@@ -27,10 +27,10 @@ public class PhoneBO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	Long id;
+	Integer id;
 	
 	@Column(name="mem_id")
-	Long memId;
+	Integer memId;
 	
 	@Column(name="date_of_birth")
 	Date dateOfBirth;

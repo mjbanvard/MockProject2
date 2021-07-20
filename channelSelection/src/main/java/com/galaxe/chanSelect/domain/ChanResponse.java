@@ -16,7 +16,6 @@ import lombok.ToString;
 public class ChanResponse {
 	
 	List<Email> email;
-	
 	List<Phone> phone;
 	
 }

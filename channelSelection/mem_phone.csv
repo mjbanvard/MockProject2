@@ -1,0 +1,4 @@
+"id";"mem_id";"date_of_birth";"mem_phone";"mem_extension";"county_calling_code";"phone_type";"best_time_to_call";"country_calling_code"
+1;2344;"2001-01-01";"'2736358273'";"'1231231232'";1;"mobile";"4 to 8";1
+2;1234;"2001-01-01";"7368471425";"";11;"land";"4 to 8";11
+3;1234;"2001-01-01";"'7625329821'";"'1234567764'";2;"mobile";"4 to 8";2

@@ -11,7 +11,6 @@ public class Request {
 
 	// Changed to Integer
 	private Integer id;
-	
 	private String groupId;
 	private String carrierId;
 	

@@ -27,13 +27,13 @@ public class EmailBO {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long id;
+	Integer id;
+	
+	@Column(name="mem_id")
+	Integer memId;
 	
 	@Column(name="date_of_birth")
 	Date dateOfBirth;
-	
-	@Column(name="mem_id")
-	Long memId;
 	
 	@Column(name="mem_email")
 	String memEmail;

@@ -1,6 +1,7 @@
 package com.galaxe.orch.DAO;
 
 import java.sql.Date;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -10,6 +11,8 @@ import com.galaxe.orch.model.MembershipBO;
 
 @Repository
 public interface MembershipDAO extends JpaRepository<MembershipBO, Integer> {
+
+//	MembershipBO findByIdAndDateOfBirth(Integer id, Date dateOfBirth);
 	
 	//Using Native Query, accesses table, confirms multiple columns, returns all columns in MembershipBO.
 	
