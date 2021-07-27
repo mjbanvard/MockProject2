@@ -1,0 +1,5 @@
+<gradleEnterprise>
+    <server>
+        <url>https://gradle.company.com</url>
+    </server>
+</gradleEnterprise>
