@@ -42,6 +42,8 @@ public class MembershipBO {
 	@Column(name= "date_of_birth")
 	private Date dateOfBirth;
 	
+	//The table was built to include both carrierId and group_id. These could be separated.
+	
 	@Getter
 	@Setter
 	@Column(name= "group_id")
