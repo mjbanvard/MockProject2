@@ -1,0 +1,118 @@
+Post Request bodies for individual Services:
+ http://localhost:8080 - Orchestration (Returns the full Recipient, and Status message from Dispatch):
+{
+    "id": 1234,
+    "dateOfBirth": "2001-01-01"
+}
+
+ http://localhost:1000 - Contact Info (Returns a list of Addresses):
+ 
+{
+    "groupId": "T55N",
+    "carrierId": "JS38456S"
+}
+
+ http://localhost:2000 - Channel Selection (Returns a list of Email details and a list of Phone details):
+ 
+{
+    "id": 1234,
+    "dateOfBirth": "2001-01-01"
+}
+
+ http://localhost:3000 - Prescription (Returns an agn number):
+ 
+{
+    "id": 1234,
+    "groupId": "T55N",
+    "carrierId": "JS38456S"
+}
+
+ http://localhost:4000 - Eligibility (Returns a Benefit Group Number and an Eligibility boolean):
+ 
+{
+    "id": 1234,
+    "groupId": "T55N",
+    "carrierId": "JS38456S"
+}
+
+ http://localhost:5000 - Dispatch (Returns a Stsatus of request, and the full Recipient in the response body):
+ 
+{
+    "id": 1234,
+    "dateOfBirth": "2001-01-01",
+    "membership": {
+        "dateOfBirth": "2001-01-01",
+        "group": {
+            "groupId": "T55N",
+            "carrierId": "JS38456S"
+        }
+    },
+    "name": {
+        "firstName": "Henry",
+        "lastName": "Ford"
+    },
+    "address": [
+        {
+            "statusVerified": null,
+            "zipCode5": null,
+            "addressLine1": "sdb",
+            "addressLine2": null,
+            "addressLine3": null,
+            "addressType": "rvsr",
+            "addressVerified": null,
+            "city": null,
+            "state": null,
+            "zipCode4": null
+        },
+        {
+            "statusVerified": null,
+            "zipCode5": null,
+            "addressLine1": null,
+            "addressLine2": "sbdfsdfb",
+            "addressLine3": null,
+            "addressType": null,
+            "addressVerified": null,
+            "city": null,
+            "state": null,
+            "zipCode4": "cw"
+        },
+        {
+            "statusVerified": null,
+            "zipCode5": null,
+            "addressLine1": null,
+            "addressLine2": "sdbfds",
+            "addressLine3": null,
+            "addressType": null,
+            "addressVerified": null,
+            "city": "asve",
+            "state": null,
+            "zipCode4": "qcr"
+        }
+    ],
+    "agn": "hs683-7859",
+    "email": [
+        {
+            "address": "this@am.com",
+            "undeliverable": true
+        },
+        {
+            "address": "tother@am.com",
+            "undeliverable": false
+        },
+        {
+            "address": "this@pm.com",
+            "undeliverable": true
+        }
+    ],
+    "phone": [
+        {
+            "bestTimeToCall": "4 to 8",
+            "number": "7368471425",
+            "extension": null,
+            "countryCallingCode": 11,
+            "phoneType": "land"
+        }
+    ],
+    "eligStatus": false,
+    "benefitGrp": "3"
+}
