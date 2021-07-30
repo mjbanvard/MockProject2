@@ -18,8 +18,6 @@ public class Recipient {
 	
 	// Recipient object built in the form of the final expected output format of the Orchestration service.
 	
-	@Getter
-	@Setter
 	private Integer id;
 
 	private Date dateOfBirth;

@@ -16,6 +16,6 @@ import lombok.ToString;
 public class CSRequest {
 	
 	Integer id;
-	Date dateOfBirth;
+	String dateOfBirth;
 	
 }

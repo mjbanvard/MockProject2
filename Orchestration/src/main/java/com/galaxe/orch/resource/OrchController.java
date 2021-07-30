@@ -99,7 +99,7 @@ public class OrchController {
 		RestTemplate rT = new RestTemplate();
 		
 		Integer id = recipient.getId();
-		Date dateOfBirth = recipient.getDateOfBirth();
+		String dateOfBirth = recipient.getDateOfBirth().toString();
 		
 		ChannelSelectionRequest channelSelectionRequest = new ChannelSelectionRequest(id, dateOfBirth);
 		ChannelSelectionResponse channelSelectionResponse = new ChannelSelectionResponse();

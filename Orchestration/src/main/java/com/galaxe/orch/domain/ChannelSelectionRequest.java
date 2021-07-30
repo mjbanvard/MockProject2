@@ -14,6 +14,6 @@ import lombok.Setter;
 public class ChannelSelectionRequest {
 	
 	Integer id;
-	Date dateOfBirth;
+	String dateOfBirth;
 
 }
