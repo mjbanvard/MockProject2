@@ -14,7 +14,7 @@ import com.galaxe.eligible.model.StatusBO;
 @Repository
 public interface StatusDAO extends JpaRepository<StatusBO, Integer> {
 	
-	@Query(value= "SELECT * FROM status a WHERE a.memid= :memId and a.groupid = :groupId and a.carrierId = :carrierId", nativeQuery=true)
+	@Query(value= "SELECT * FROM eligibility e WHERE e.memid= :memId and e.groupid = :groupId and e.carrierId = :carrierId", nativeQuery=true)
 	StatusBO findByMemIdAndGroupIdAndCarrierId(@Param("memId")String memId, @Param("groupId")String groupId, @Param("carrierId")String carrier);
 			
 }
