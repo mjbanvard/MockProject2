@@ -15,16 +15,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "dispatch")
+@Table( name = "dispatch" )
 public class DispatchBO {
 	
 	@Id
-//	@Column(name = "id")
-//	@GeneratedValue(strategy= GenerationType.IDENTITY)
-//	private Integer row_id;
-	@Column(name = "member_id")
+	@Column( name = "member_id" )
 	private Integer id;
-	@Column(name = "request")
+	
+	@Column( name = "request" )
 	private String request;
 
 

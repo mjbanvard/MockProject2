@@ -38,10 +38,11 @@ public class ChanSelController {
 		List< Phone > pList = new ArrayList<>();
 		
 		Integer id = request.getId();
+		Date date = Date.valueOf(request.getDateOfBirth());
 		
-		logger.trace( "LOG: Changing json value to Date" );
-		String stringDate = request.getDateOfBirth().toString();
-		Date date = Date.valueOf( stringDate );
+//		logger.trace( "LOG: Changing json value to Date" );
+//		String stringDate = request.getDateOfBirth().toString();
+//		Date date = Date.valueOf( stringDate );
 		
 		eList = csService.getEmail( id, date );
 		pList = csService.getPhone( id, date );
